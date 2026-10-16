@@ -1,0 +1,30 @@
+{
+  "name": "mage-os/module-catalog-image-cleanup",
+  "description": "Removes catalog product and category image files that are no longer referenced in the database (CLI) and deletes the files when images are removed from the admin.",
+  "type": "magento2-module",
+  "keywords": ["mage-os", "magento2", "media", "images", "cleanup", "orphan", "catalog"],
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Gianluca Porta",
+      "email": "gporta@gianlucaporta.it"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "magento/framework": "*",
+    "magento/module-catalog": "*",
+    "magento/module-config": "*",
+    "magento/module-eav": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MageOS\\CatalogImageCleanup\\": ""
+    }
+  }
+}

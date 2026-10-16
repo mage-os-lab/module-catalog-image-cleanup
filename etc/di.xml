@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\ResourceModel\Product">
+        <plugin name="mageos_catalog_image_cleanup" type="MageOS\CatalogImageCleanup\Plugin\ProductResourcePlugin"/>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Category">
+        <plugin name="mageos_catalog_image_cleanup" type="MageOS\CatalogImageCleanup\Plugin\CategoryResourcePlugin"/>
+    </type>
+
+    <!-- Text columns searched for image paths before a file is considered unused: table => column -->
+    <type name="MageOS\CatalogImageCleanup\Model\ContentReferences">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="cms_page" xsi:type="string">content</item>
+                <item name="cms_block" xsi:type="string">content</item>
+                <item name="catalog_product_entity_text" xsi:type="string">value</item>
+                <item name="catalog_category_entity_text" xsi:type="string">value</item>
+                <item name="widget_instance" xsi:type="string">widget_parameters</item>
+                <item name="core_config_data" xsi:type="string">value</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="mageos_catalog_images_cleanup" xsi:type="object">MageOS\CatalogImageCleanup\Console\Command\CleanupCommand</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

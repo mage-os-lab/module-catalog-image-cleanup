@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog">
+            <group id="image_cleanup" translate="label comment" sortOrder="900" showInDefault="1">
+                <label>Image File Cleanup</label>
+                <comment><![CDATA[Run <code>bin/magento mageos:catalog-images:cleanup --dry-run</code> to list the product and category image files that are no longer used, then without <code>--dry-run</code> to delete them.]]></comment>
+                <field id="auto_delete" translate="label comment" type="select" sortOrder="10" showInDefault="1" canRestore="1">
+                    <label>Delete Files When Images Are Removed</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When a category image is removed or replaced, or a product or category is deleted, the image files (and the resized product images) are deleted as soon as no product, category or content uses them anymore.</comment>
+                </field>
+                <field id="check_content" translate="label comment" type="select" sortOrder="20" showInDefault="1" canRestore="1">
+                    <label>Keep Files Linked in Content</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Also look for the image path in CMS pages and blocks, product and category descriptions, widgets and configuration values before deleting a file. Safer, slightly slower on very large catalogs.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,5 @@
+"Image File Cleanup","Pulizia file immagini"
+"Delete Files When Images Are Removed","Elimina i file quando le immagini vengono rimosse"
+"Keep Files Linked in Content","Mantieni i file collegati nei contenuti"
+"When a category image is removed or replaced, or a product or category is deleted, the image files (and the resized product images) are deleted as soon as no product, category or content uses them anymore.","Quando l'immagine di una categoria viene rimossa o sostituita, o un prodotto o una categoria vengono eliminati, i file immagine (e le immagini prodotto ridimensionate) vengono eliminati non appena nessun prodotto, categoria o contenuto li usa più."
+"Also look for the image path in CMS pages and blocks, product and category descriptions, widgets and configuration values before deleting a file. Safer, slightly slower on very large catalogs.","Prima di eliminare un file cerca il percorso dell'immagine anche in pagine e blocchi CMS, descrizioni di prodotti e categorie, widget e valori di configurazione. Più sicuro, leggermente più lento su cataloghi molto grandi."
